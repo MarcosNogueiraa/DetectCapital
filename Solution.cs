@@ -4,7 +4,6 @@ public class Solution {
         int upperCount = 0;
         int length = word.Length;
 
-        // Conta quantas letras maiúsculas existem na palavra
         foreach (char n in word)
         {
             if (char.IsUpper(n)) 
