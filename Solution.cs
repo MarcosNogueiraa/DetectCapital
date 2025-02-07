@@ -1,17 +1,16 @@
 public class Solution {
     public bool DetectCapitalUse(string word) 
     {
-        bool isUpper = char.IsUpper(word[0]);
+        int upperCount = 0;
+        int length = word.Length;
 
-        if (char.IsUpper(word[0]) && word.Substring(1) == word.Substring(1).ToLower())
-            return true;
-
-        foreach(char n in word)
+        // Conta quantas letras maiúsculas existem na palavra
+        foreach (char n in word)
         {
-            if(char.IsUpper(n) != isUpper)
-                return false;
+            if (char.IsUpper(n)) 
+                upperCount++;
         }
 
-        return true;
+        return upperCount == 0 || upperCount == length || (upperCount == 1 && char.IsUpper(word[0]));
     }
 }
