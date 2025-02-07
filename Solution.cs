@@ -3,6 +3,9 @@ public class Solution {
     {
         bool isUpper = char.IsUpper(word[0]);
 
+        if (char.IsUpper(word[0]) && word.Substring(1) == word.Substring(1).ToLower())
+            return true;
+
         foreach(char n in word)
         {
             if(char.IsUpper(n) != isUpper)
